@@ -51,7 +51,7 @@ To deploy the PS service it will be enough to **use one of both data structures*
         - *getNeighbors(Node)* gets the list of neighboring peers of a node.
 
 1. Implement a sequential procedure (in bash or any other programming language) that instantiates an Erlang process (peer) and invokes the call *add(Node)*.
-        - :bulb: **Notice** that this sequential procedure should wait until the last peer has been added to the data structure **before every peer start the PS service.**
+  - :bulb: **Notice** that this sequential procedure should wait until the last peer has been added to the data structure **before every peer start the PS service.**
 
 As simple as that, you have a first connected network to initiate the PS service in every peer.
 
