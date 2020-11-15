@@ -47,11 +47,11 @@ To deploy the PS service it will be enough to **use one of both data structures*
 
 1. Once you chose either the double-linked list or the binary tree, provide an implementation of this data structure in a server process.
 1. This server process should expose an API with at least two requests:
-    - *add(Node)* adds a node to the data structure;
-    - *getNeighbors(Node)* gets the list of neighboring peers of a node.
+        - *add(Node)* adds a node to the data structure;
+        - *getNeighbors(Node)* gets the list of neighboring peers of a node.
 
 1. Implement a sequential procedure (in bash or any other programming language) that instantiates an Erlang process (peer) and invokes the call *add(Node)*.
-  - :bulb: **Notice** that this sequential procedure should wait until the last peer has been added to the data structure.
+        - :bulb: **Notice** that this sequential procedure should wait until the last peer has been added to the data structure **before every peer start the PS service.**
 
 As simple as that, you have a first connected network to initiate the PS service in every peer.
 
@@ -107,23 +107,23 @@ Finally, you should write your conclusions in a brief report explaining your plo
 You will find below every criterion we will use to grade the project, their weights as well as a check-list of elements every criterion should contain to grant you the highest note.
 
 - **Criteria 1 (20%):** *Deployment of bootstrap network*.
-  - :heavy_check_mark: The procedure explaining how nodes join the first network has a clear description;
-  - :heavy_check_mark: The implementation of the double-linked list or binary tree has brief documentation;
-  - :heavy_check_mark: There exists a unit test to confirm the correctness of the chosen data structure to represent the first connected network;
+  - The procedure explaining how nodes join the first network has a clear description;
+  - The implementation of the double-linked list or binary tree has brief documentation;
+  - There exists a unit test to confirm the correctness of the chosen data structure to represent the first connected network;
     - *Double-linked list.* Having the add operation is enough;
     - *Binary tree.* Ideally, the binary tree should be balanced.
 
 - **Criteria 2 (50%):** *PS service implementation*.
-  - :heavy_check_mark: The sources contains comments justifying lines-of-code difficult to understand;
-  - :heavy_check_mark: The implementation is fully parametrized;
-  - :heavy_check_mark: The polices of view selection and view selection are consistent with the parametrization;
-  - :heavy_check_mark: The peer descriptors contain an age (integer);
-  - :heavy_check_mark: The code handles exceptions to avoid stopping the active thread;
-  - :heavy_check_mark: The data in the logs is sufficient to compute the in-degree of the peer sampling overlay.
+  - The sources contains comments justifying lines-of-code difficult to understand;
+  - The implementation is fully parametrized;
+  - The polices of view selection and view selection are consistent with the parametrization;
+  - The peer descriptors contain an age (integer);
+  - The code handles exceptions to avoid stopping the active thread;
+  - The data in the logs is sufficient to compute the in-degree of the peer sampling overlay.
 
 - **Criteria 3 (30%):** *Deployment of experimental scenario (s) and conclusions*.
-  - :heavy_check_mark: The sources to set up the timeline of the experimental scenario contains clear (but brief) documentation;
-  - :heavy_check_mark: The procedure to compute the in-degree is correct and contains brief documentation;
-  - :heavy_check_mark: There is a box plot containing two curves, the first one represent the execution of the healer policy of view selection and the second one represents the swapper policy;
-  - :heavy_check_mark: The execution lasts at least 180 cycles and there is a data point every 20 cycles for the in-degree;
-  - :heavy_check_mark: There is a clear justification of the behavior of curves in the in-degree box plot according to the scenario.
+  - The sources to set up the timeline of the experimental scenario contains clear (but brief) documentation;
+  - The procedure to compute the in-degree is correct and contains brief documentation;
+  - There is a box plot containing two curves, the first one represent the execution of the healer policy of view selection and the second one represents the swapper policy;
+  - The execution lasts at least 180 cycles and there is a data point every 20 cycles for the in-degree;
+  - There is a clear justification of the behavior of curves in the in-degree box plot according to the scenario.
